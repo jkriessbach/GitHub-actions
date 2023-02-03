@@ -8,13 +8,16 @@ on:
   schedule:
    - cron: "15 6 * * sun"
    
+  workflow_dispatch:
+   
 jobs:
-  my_build:
+  build:
     name: Build 
     runs-on: ubuntu-latest
     
     steps:
-      - name: Provide feedback
-        run: echo This is a message
-    
+     - uses: actions/checkout@v3.0.2
+     - name: Provide feedback
+       run: echo This is a message
+        
   
